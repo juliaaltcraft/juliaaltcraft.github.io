@@ -3,12 +3,18 @@
     <script src="https://pxl.julia-popova.dev.altkraft.com/ak_container.js?id=MXwxNg.." ></script>
   </head>
   <body>
-    <script>
-    window.onload = function() {
-    window.akPush = new AKPush();
-    akPush.initSubscription({ email: 'test@test.mail'})
-    console.log(akPush);
-  };
-    </script>
+    <button id="init_sub">Подписаться на уведомления</button> // Кнопка подписки
+ 
+<script>
+    document.getElementById('init_sub').addEventListener('click', function() { // По клику на кнопку..
+    try {
+        var akPush = new AKPush();
+        akPush.initSubscription() // ..показать форму подписки
+        }
+    catch (e) {
+        console.log(e); // Или записать ошибку в консоль браузера
+        }
+    });
+</script>
   </body>
 </html>
