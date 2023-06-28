@@ -1,0 +1,5 @@
+{
+  "permissions": [ "activeTab" ],
+  "name": "https://juliaaltcraft.github.io",
+  "display": "standalone"
+}

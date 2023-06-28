@@ -1,0 +1,1 @@
+importScripts('https://pxl.julia-popova.dev.altkraft.com/service-worker.js?id=MXwxNg..');
