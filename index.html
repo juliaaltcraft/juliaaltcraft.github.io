@@ -3,8 +3,12 @@
     <script src="https://pxl.julia-popova.dev.altkraft.com/ak_container.js?id=MXwxNg.." ></script>
   </head>
   <body>
-    <div>
-      kadjkajdjaajdjd
-    </div>
+    <script>
+    window.onload = function() {
+    window.akPush = new AKPush();
+    akPush.initSubscription({ email: 'test@test.mail'})
+    console.log(akPush);
+  };
+    </script>
   </body>
 </html>
