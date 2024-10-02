@@ -41,26 +41,6 @@
             <label for="message">Увлечения</label>
             <textarea name="comment" placeholder="Расскажите обо всём, что для вас важно" id="message"></textarea>
          </div>
-          <!-- Кнопка для события -->
-    <button id="myButton">Click Me</button>
-
-    <script>
-        // Привязываем событие к кнопке по клику
-        document.getElementById('myButton').addEventListener('click', function() {
-            // Создаем и вызываем пользовательское событие "button-click"
-            const event = new CustomEvent('button-click', {
-                detail: { message: 'Button was clicked!', timestamp: Date.now() }
-            });
-
-            // Запускаем событие
-            document.dispatchEvent(event);
-        });
-
-        // Обрабатываем событие "button-click"
-        document.addEventListener('button-click', function(e) {
-            console.log('Button Click Event Triggered:', e.detail.message, 'at', new Date(e.detail.timestamp));
-        });
-    </script>
          <div>
             <button type="submit">Отправить</button>
             <p>* — Обязательные поля</p>
