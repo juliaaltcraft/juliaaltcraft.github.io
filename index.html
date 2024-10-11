@@ -37,6 +37,25 @@
                </li>
             </ul>
          </fieldset>
+         <h1>Error Example</h1>
+    <script>
+        // Глобальный обработчик ошибок
+        window.onerror = function (msg, url, lineNo, columnNo, error) {
+            console.log("Ошибка перехвачена:", msg);
+            return true; // Возвращаем true, чтобы остановить всплытие ошибки
+        };
+
+        // Асинхронная ошибка в промисе
+        new Promise((resolve, reject) => {
+            reject(new Error('Async error!'));  // Ошибка, не будет перехвачена window.onerror
+        });
+
+        // Вызываем ошибку в асинхронном коде (setTimeout)
+        setTimeout(() => {
+            throw new Error('Error in setTimeout!');  // Ошибка, не будет перехвачена window.onerror
+        }, 1000);
+    </script>
+
          <div>
             <label for="message">Увлечения</label>
             <textarea name="comment" placeholder="Расскажите обо всём, что для вас важно" id="message"></textarea>
