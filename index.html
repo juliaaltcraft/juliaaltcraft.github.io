@@ -1,69 +1,115 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <script>
-         (function (window, document, dataLayerName, containerID) {
-             window[dataLayerName] = window[dataLayerName] || [];
-             window[dataLayerName].push({ 'start': new Date().getTime(), event: 'actm-js' });
-             var firstScript = document.getElementsByTagName('script')[0];
-             var script = document.createElement('script');
-             var dl = dataLayerName !== 'acDataLayer' ? '&l=' + dataLayerName : '';
-             script.async = true;
-             script.src = 'https://pxl-julia-popova.qa.altcraft.com/actm/js/actm.js?id=' + containerID + dl;
-             script.type = 'module';
-             if (firstScript && firstScript.parentNode) {
-                 firstScript.parentNode.insertBefore(script, firstScript);
-             }
-         }(window, document, 'acDataLayer', 'ATM-8nR1DZrFYC5B-KO5D'));
-      </script>
-   </head>
-   <body>
-      <p>
-      <h1>Тестовая страница</h1>
-      </p>
-      <a hrefs="https://example.com"> Ссылка </a>
-      <form action="#" method="post" target="_blank">
-         <h2>Шаблон формы</h2>
-         <fieldset>
-            <legend>Персональные данные</legend>
-            <ul>
-               <li>
-                  <label for="name">Имя:</label>
-                  <input type="text" name="name" placeholder="Иван Иванов" id="name">
-               </li>
-               <li>
-                  <label for="age">Возраст:</label>
-                  <input type="number" name="age" placeholder="27" id="age" min="0" max="125">
-               </li>
-            </ul>
-         </fieldset>
-         <h1>Error Example</h1>
-    <script>
-        // Глобальный обработчик ошибок
-        window.onerror = function (msg, url, lineNo, columnNo, error) {
-            console.log("Ошибка перехвачена:", msg);
-            return true; // Возвращаем true, чтобы остановить всплытие ошибки
-        };
+<html lang = "ru">
+    <head>
+        <title>Публикация попапов</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:site_name" content="FormPublisher" />
+        
+        <link rel="shortcut icon" href="https://guides.altcraft.com/en/user-guide/en/img/favicon.svg">
+        <link rel="mask-icon" sizes="any" href="https://igor-egorov.dev.altkraft.com/695361968/1/642d6041c5255c487c271100/Favicon.png" color="#FFF">
+        <link rel="apple-touch-icon" sizes="192x192" href="https://igor-egorov.dev.altkraft.com/695361968/1/642d6041c5255c487c271100/Favicon.png" />
+        <link rel="apple-touch-startup-image" href="https://igor-egorov.dev.altkraft.com/695361968/1/642d6041c5255c487c271100/Favicon.png">
 
-        // Асинхронная ошибка в промисе
-        new Promise((resolve, reject) => {
-            reject(new Error('Async error!'));  // Ошибка, не будет перехвачена window.onerror
-        });
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
 
-        // Вызываем ошибку в асинхронном коде (setTimeout)
-        setTimeout(() => {
-            throw new Error('Error in setTimeout!');  // Ошибка, не будет перехвачена window.onerror
-        }, 1000);
-    </script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100&display=swap');
 
-         <div>
-            <label for="message">Увлечения</label>
-            <textarea name="comment" placeholder="Расскажите обо всём, что для вас важно" id="message"></textarea>
-         </div>
-         <div>
-            <button type="submit">Отправить</button>
-            <p>* — Обязательные поля</p>
-         </div>
-      </form>
-   </body>
+            html, body {
+                font: 14pt Arial;
+                margin: 0;
+                padding: 0;
+                color: white;
+                background: linear-gradient(270deg, #6128ca, #008170);
+                background-size: 400% 400%;
+                -webkit-animation: Root 36s ease infinite;
+                -moz-animation: Root 36s ease infinite;
+                animation: Root 36s ease infinite;
+                height: 100%;
+                display: flex;
+                flex: 1;
+            }
+            a {text-decoration: none; color: aquamarine;}
+            a:hover {text-decoration: none; color: rgb(29, 110, 83)}
+
+            #refresh {width: 150px; height: 35px; margin-top: 5%;}
+
+            iframe {
+                width: 100%;
+                height: 120%;
+                border: none;
+                -webkit-box-shadow: -1px 4px 11px 10px rgba(34, 60, 80, 0.51);
+                -moz-box-shadow: -1px 4px 11px 10px rgba(34, 60, 80, 0.51);
+                box-shadow: -1px 4px 11px 10px rgba(34, 60, 80, 0.51);
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+                margin-top: 5%;
+            }
+
+            .container {
+                max-width: 100%;
+                width: 80%;
+                margin: 0 auto;
+                text-align: center;
+                height: auto;
+                font-family: 'Roboto Mono', monospace !important;
+                font-weight: 200;
+                font-size: 35pt;
+            }
+
+            @-webkit-keyframes Root {
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+            }
+            @-moz-keyframes Root {
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+            }
+            @keyframes Root {
+                0%{background-position:0% 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0% 50%}
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Dynamic content-->
+        <script>
+
+            var data = prompt('Вставьте скрипт контейнера');
+            console.log(`Embedded element: ${data}`);
+
+            (function showFrame()
+            {   
+                // Find body
+                const body = document.querySelector('body');
+
+                // Create container
+                const container = document.createElement('div');
+                container.setAttribute('class', 'container');
+                body.appendChild(container);
+
+                // Create title
+                const title = document.createElement('p');
+                title.innerText = 'Публикация попапа';
+                container.appendChild(title);
+
+                // Create iframe
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('id', 'frame');
+                iframe.setAttribute('srcdoc', `${data}`);
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('scrolling', 'auto');
+                iframe.setAttribute('style', 'height: calc(100% - 1px)');
+                container.appendChild(iframe);
+                
+            })();
+        </script>
+    </body>
 </html>
