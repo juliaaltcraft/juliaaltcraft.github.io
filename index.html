@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <nav>
-        <ul>
-          <p style="text-align: center"><button>Кнопка с текстом</button>
-          <li><a href="#" id="test_link">Тестовый url</a></li>     <-------- Обязательно должно быть id="test_liink"
-          <li><a href="new_dir/index.html">Эта новая страница</a></li>
-          <li><a href="catalog.html">Другая страница</a></li>
-        </ul>
-      </nav>
+          <style>
+       P { /* Обычный абзац */ 
+            text-align: justify; /* Выравнивание текста по ширине */
+       } 
+       cite { /* Абзац с классом cite */
+            color: navy; /* Цвет текста */
+            margin-left: 20px; /* Отступ слева */
+            border-left: 1px solid navy; /* Граница слева от текста */
+            padding-left: 15px; /* Расстояние от линии до текста */
+       } 
+    </style>
+
       <script>
          (function (window, document, dataLayerName, containerID) {
              window[dataLayerName] = window[dataLayerName] || [];
