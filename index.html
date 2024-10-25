@@ -67,6 +67,15 @@
             throw new Error('Error in setTimeout!');  // Ошибка, не будет перехвачена window.onerror
         }, 1000);
     </script>
+         let myEvent = new Event("myCustomEvent");
+
+// Добавляем слушатель для события
+document.addEventListener("myCustomEvent", function() {
+  console.log("Событие myCustomEvent было вызвано!");
+});
+
+// Запускаем событие
+document.dispatchEvent(myEvent);
          <div>
             <label for="message">Увлечения</label>
             <textarea name="comment" placeholder="Расскажите обо всём, что для вас важно" id="message"></textarea>
