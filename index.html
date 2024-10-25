@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Отслеживание кастомного события</title>
-  <header>
+<html>
+   <head>
+         <header>
       <h1>Это мой сайт</h1>
       <nav>
         <ul>
@@ -15,29 +12,51 @@
         </ul>
       </nav>
     </header>
-</head>
-<body>
-  <!-- Кнопка отправки формы -->
-  <form id="myForm">
-    <button type="button" onclick="submitForm()">Отправить форму</button>
-  </form>
 
-  <script>
-    // Создаем функцию для кастомной отправки формы
-    function submitForm() {
-      // Выполняем какую-то логику перед отправкой формы
-      console.log("Форма была отправлена!");
-
-      // Создаем и запускаем кастомное событие 'button-click'
-      let buttonClickEvent = new Event("button-click");
-      document.dispatchEvent(buttonClickEvent); // Генерируем событие на документе
-    }
-
-    // Добавляем слушатель для нашего кастомного события 'button-click'
-    document.addEventListener("button-click", function() {
-      console.log("Событие button-click было зафиксировано!");
-      // Здесь можно добавить логику для аналитики или других действий
-    });
-  </script>
-</body>
+      <script>
+         (function (window, document, dataLayerName, containerID) {
+             window[dataLayerName] = window[dataLayerName] || [];
+             window[dataLayerName].push({ 'start': new Date().getTime(), event: 'actm-js' });
+             var firstScript = document.getElementsByTagName('script')[0];
+             var script = document.createElement('script');
+             var dl = dataLayerName !== 'acDataLayer' ? '&l=' + dataLayerName : '';
+             script.async = true;
+             script.src = 'https://pxl-julia-popova.qa.altcraft.com/actm/js/actm.js?id=' + containerID + dl;
+             script.type = 'module';
+             if (firstScript && firstScript.parentNode) {
+                 firstScript.parentNode.insertBefore(script, firstScript);
+             }
+         }(window, document, 'acDataLayer', 'ATM-8nR1DZrFYC5B-KO5D'));
+      </script>
+   </head>
+   <body>
+      <p>
+      <h1>Тестовая страница</h1>
+      </p>
+      <a hrefs="https://example.com"> Ссылка </a>
+      <form action="#" method="post" target="_blank">
+         <h2>Шаблон формы</h2>
+         <fieldset>
+            <legend>Персональные данные</legend>
+            <ul>
+               <li>
+                  <label for="name">Имя:</label>
+                  <input type="text" name="name" placeholder="Иван Иванов" id="name">
+               </li>
+               <li>
+                  <label for="age">Возраст:</label>
+                  <input type="number" name="age" placeholder="27" id="age" min="0" max="125">
+               </li>
+            </ul>
+         </fieldset>
+         <div>
+            <label for="message">Увлечения</label>
+            <textarea name="comment" placeholder="Расскажите обо всём, что для вас важно" id="message"></textarea>
+         </div>
+         <div>
+            <button type="submit">Отправить</button>
+            <p>* — Обязательные поля</p>
+         </div>
+      </form>
+   </body>
 </html>
