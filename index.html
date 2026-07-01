@@ -31,11 +31,16 @@
     
         </script>
         <script>
-            
-      acpopup('create', 'AP-2XLKoteke1oUHzpkE');
-      acpopup('show', 'AP-2XLKoteke1oUHzpkE');
-    
-        </script>
+          window.onload = function() {
+              setTimeout(function() {
+                  // Запрос данных попапа с сервера
+                  acpopup('create', '<popup_id>');
+      
+                  // Показ попапа
+                  acpopup('show', '<popup_id>');
+              }, 10000);
+          };
+      </script>
     
     
    </head>
