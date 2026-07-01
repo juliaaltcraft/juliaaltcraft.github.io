@@ -32,11 +32,20 @@
       <button onclick="showPopupClick()">Показать попап</button>
    
    <script>
-       function showPopupClick() {
-           acpopup('create', 'AP-2XLKoteke1oUHzpkE');
-           acpopup('show', 'AP-2XLKoteke1oUHzpkE');
-       }
-   </script>
+        window.onload = function() {
+            setTimeout(function() {
+                acpopup('create', 'AP-2XLKoteke1oUHzpkE', {
+                    matching_mode: 'email',
+                    matching: {
+                        email: 'monserrate.denesik.*250-ok-d4172346-36b3-47b9-abb8-6b1d2053362e@abucat.lan',
+                        db_ids: [1]
+                    },
+                    smid: 'send_message_id',
+                });
+                acpopup('show', 'AP-2XLKoteke1oUHzpkE');
+            }, 10000);
+        };
+    </script>
     
    </head>
    <body>
